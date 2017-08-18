@@ -1,0 +1,12 @@
+import urllib.request
+from bs4 import BeautifulSoup
+
+
+webpage = urllib.request.urlopen('https://en.wikipedia.org/wiki/Main_Page')
+soup = BeautifulSoup(webpage,'html.parser')
+text1 = soup.find('div', attrs={'id':'mp-tfa'})
+text2=text1.text
+p=text2.split()
+print(p)
+
+    
